@@ -21,9 +21,9 @@ qiime dada2 denoise-single \
   --o-table table.qza \
   --o-denoising-stats stats.qza
 
-## End of Oct, 8th 2023 - Ives
+## Ended on Oct, 8th 2023 (at 5:00pm) - Ives
 
-### Not Done yet ###
+## Resumed on of Oct, 8th 2023 (at 11:20pm) - Ives
 
 # Visualize DADA2 stats
 qiime metadata tabulate \
@@ -39,5 +39,8 @@ qiime feature-table summarize \
 qiime feature-table tabulate-seqs \
   --i-data rep-seqs.qza \
   --o-visualization rep-seqs.qzv
+
+## Ended on Oct, 8 th 2023 (at 11:30pm) - Ives
+
 
 
