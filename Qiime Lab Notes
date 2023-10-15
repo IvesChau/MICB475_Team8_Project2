@@ -42,5 +42,48 @@ qiime feature-table tabulate-seqs \
 
 ## Ended on Oct, 8 th 2023 (at 11:30pm) - Ives
 
+## Oct, 14th 2023 - Ives
 
+## Taxonomic analysis
+qiime feature-classifier classify-sklearn \
+  --i-classifier /mnt/datasets/classifiers/silva-138-99-515-806-nb-classifier.qza \
+  --i-reads rep-seqs.qza \
+  --o-classification taxonomy.qza
+
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+
+## Generate a tree for phylogenetic diversity analyses
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences rep-seqs.qza \
+  --o-alignment aligned-rep-seqs.qza \
+  --o-masked-alignment masked-aligned-rep-seqs.qza \
+  --o-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza 
+
+## In parallel, separate screen, made export folder for 
+
+## table_export
+qiime tools export \
+  --input-path ../table.qza \
+  --output-path table_export 
+
+biom convert \
+  -i feature-table.biom \
+  --to-tsv \
+  -o feature-table.txt
+
+## rooted-tree_export
+qiime tools export \
+  --input-path ../rooted-tree.qza \
+  --output-path rooted-tree_export
+
+## After Taxonomic Analysis Finish Generating
+## Made export folder for taxonomy_export
+qiime tools export \
+  --input-path ../taxonomy.qza \
+  --output-path taxonomy_export
+
+## Ended on Oct, 8 th 2023 (at 11:30pm) - Ives
 
