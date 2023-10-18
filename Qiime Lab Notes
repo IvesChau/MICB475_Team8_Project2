@@ -87,3 +87,16 @@ qiime tools export \
 
 ## Ended on Oct, 8 th 2023 (at 11:30pm) - Ives
 
+## Oct, 18th 2023 - Ives
+
+## Make alpha rarefraction curve for visualization of sampling cutoff
+## Sampling depth for 24026 just for visualization purposes
+qiime diversity alpha-rarefaction \
+  --i-table table.qza \
+  --i-phylogeny rooted-tree.qza \
+  --p-max-depth 24026 \
+  --m-metadata-file /mnt/datasets/project_2/parkinsons/parkinsons_metadata.txt \
+  --o-visualization alpha-rarefaction.qzv
+
+## Ended on Oct, 8 th 2023 (at 5:40am) - Ives
+
